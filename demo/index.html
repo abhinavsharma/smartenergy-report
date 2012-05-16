@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			
+			<script src="static/js/jquery-1.6.4.min.js"></script>
+			<script type="text/javascript" src="static/js/jquery-ui-1.8.18.custom.min.js"></script>
+		  <script src="static/js/jquery.mobile.config.js"></script>
+			<script src="static/js/jquery.mobile-1.0.1.js"></script>
+			<script type='text/javascript' src='static/js/jquery.easing.1.3.js'></script> 
+			<script type='text/javascript' src='static/js/jquery.flexslider-min.js'></script> 
+			<script type='text/javascript' src='static/js/camera.js'></script> 
+			<script type="text/javascript" src="static/js/jquery.tipsy.js"></script>
+			<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+			<script type="text/javascript" src="static/js/action.js"></script>
+			<script type="text/javascript" src="static/js/trend.js"></script> 
+			<script type="text/javascript" src="static/js/appliance.js"></script> 
+			<script type="text/javascript" src="static/js/main.js"></script>
+			
+			<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel="stylesheet" type="text/css">
+			<link type="text/css" href="static/css/jquery-ui-1.8.18.custom.css" rel="stylesheet" />	
+			<link type="text/css" href="static/css/tipsy.css" rel="stylesheet" />	
+			<link type="text/css" href="static/css/flexslider.css" rel="stylesheet" />	
+			<link href="static/css/jquery.mobile-1.0.1.min.css" rel="stylesheet"/>
+			<link href="static/css/font-awesome.css" rel="stylesheet">
+			<link href='static/css/camera.css' type='text/css' media='all' rel='stylesheet' id='camera-css'> 
+			<link href="static/css/style.css" rel="stylesheet">
+			
+			<title>Smart Energy | Home</title>
+    </head>
+    
+    <body>
+			<div id="menu">
+			<h3>Menu</h3>
+				<ul>
+					<li class="active"><a href="#home"  data-transition="fade" class="contentLink" id="menu_home">Home </a></li>
+					<li class=""><a href="#appliances" data-transition="fade"  class="contentLink">Appliances</a></li>
+					<li class=""><a href="#analysis"  data-transition="fade" class="contentLink">Analysis</a></li>
+					<li class=""><a href="#account" data-transition="fade" class="contentLink">Account</a></li>
+				</ul>
+			</div>
+		
+			<div data-role="page" id="home" data-title="Smart Energy | Home">
+				<div data-role="header" class="ui-header ui-bar-a" role="banner">
+					<a href="#" class="showMenu">Menu</a>
+					<h4><img class="header-icon" src="static/img/icon.png"/>Smart Energy</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" data-theme="a">
+						<li data-icon="false" data-theme="c" style="background: #5A5959">
+							<a href="" class="slide_link">
+								<div class="flexslider">
+                  <ul class="slides">
+                    <li>
+											<a href="#goal_setting" data-rel="dialog" >
+												<img src="http://cl.ly/3J16273c0S1s343q1H1o/Untitled-5.png" />
+												<p class="flex-caption">Monthly Energy Budget (Click to set new budget for this month.)</p>
+											</a>
+                    </li>
+                    <li>
+                      <img src="http://chart.apis.google.com/chart?chf=bg,s,FFFFFF&chs=550x300&cht=p&chco=80C65A&chds=0,90&chd=t:66,44,56,32,22&chp=0.895&chl=Lighting+(66)|Computers+(44)|Fridge+(56)|TV+(32)|Other+(22)&chma=|32,30" />
+                      <p class="flex-caption">Live Energy Usage (in cents/hour)</p>
+                    </li>
+                  </ul>
+                </div>
+							</a>
+						</li>
+						<li>
+							<img src="static/img/pending_action.png"/>
+							<h2>Pending Actions</h2>
+							<p style="color:#999">Suggestions for improving your energy usage</p>
+							<span class="ui-li-count">2</span>
+							<ul data-role="listview" data-theme="c">
+								<li data-icon="false" data-theme="c">
+									<a href="#action_option" data-rel="dialog" data-transition="flip">
+										<img src="static/img/appliances/microwave.png" width="80" height="80" style="position:absolute;"/>
+										<h4>Microwave Repair?</h4>
+										<p style="color:#999">Your microwave is consuming more energy than average by 60%. Its possible that it could be faulty.</p>
+									</a>
+								</li>
+								<li data-icon="false" data-theme="c">
+									<a href="#action_option" data-rel="dialog" data-transition="flip">
+										<img src="static/img/appliances/washer.png" width="80" height="80" style="position:absolute;"/>
+										<h2>Washer Overuse</h2>
+										<p style="color:#999">Your used $20 worth of energy on your washer this month. You usually spend $6.</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<img src="static/img/previous_action.png"/>
+							<h2>Previous Actions</h2>
+							<p style="color:#999">Past suggestions for improving your energy usage</p>
+							
+							<ul data-role="listview" data-theme="c">
+								<li data-icon="false" data-theme="c">
+									<a href="#action_fan" data-rel="dialog" data-transition="flip">
+										<img src="static/img/appliances/fan.png" width="80" height="80" style="position:absolute;"/>
+										<h2>Unplug your fan?</h2>
+										<p style="color:#999">Summer is almost gone, tt might be a good time to unplug your fan.</p>
+									</a>
+								</li>
+								<li data-icon="false" data-theme="c">
+									<a href="#action_printer" data-rel="dialog" data-transition="flip">
+										<img src="static/img/appliances/printer.png" width="80" height="80" style="position:absolute;"/>
+										<h2>Printer usage increased</h2>
+										<p style="color:#999">Your printer usage increased by 350% this month than last month. Are you using it excessively?</p>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="page" id="goal_setting" data-title="Smart Energy | Goal Setting">
+				<div data-theme="a" data-role="header">
+					<h4><img class="header-icon" src="static/img/icon.png"/>Smart Energy</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" data-theme="b">						
+						<li data-icon="false" data-theme="c">
+							<a href="" style="white-space:normal">
+								<label for="slider-0">Budget for this month ($):</label>
+								<input type="range" name="slider" id="slider-0" value="80" min="0" max="160" data-highlight="true" data-mini="true"/>
+								<a data-rel="back" data-role="button" data-rel="back">Save</a>
+							</a>
+						</li>
+						<li>Current Usage: $56</li>
+						<li>Current Expected Usage: $50</li>
+						<li>Current budget for this month: $80</li>
+						<li>Usage Last Month: $82</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="page" id="action_option" data-title="Smart Energy | Perform Action">
+				<div data-theme="a" data-role="header">
+					<h4><img class="header-icon" src="static/img/icon.png"/>Smart Energy</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" data-theme="b">
+						<li data-icon="false" data-theme="c"><a href="" data-rel="back" style="white-space:normal">Suggestion 1: You changed to a new microwave with higher power rate.</a></li>
+						<li data-icon="false" data-theme="c"><a href="" data-rel="back" style="white-space:normal">Suggestion 2: Current microwave is approaching end of life-cycle. Switch to a new one.</a></li>
+						<li data-icon="false" data-theme="c"><a href="" data-rel="back" style="white-space:normal">Suggestion 3: Served for people quite a few times last month.</a></li>
+						<li data-icon="false" data-theme="c">
+							<a href="" style="white-space:normal">
+								Other:
+								<input type="text" name="name" id="other" value=""  />
+								<a data-rel="back" data-role="button" data-rel="back">Save</a>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="page" id="action_printer" data-title="Smart Energy | Previous Action">
+				<div data-theme="a" data-role="header">
+					<h4><img class="header-icon" src="static/img/icon.png"/>Smart Energy</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" data-theme="b">
+						<li>Issue: Printer usage increased</li>
+						<li>Description: Your printer usage increased by 350% this month than last month. Are you using it excessively?</li>
+						<li>Issue date: 04/20/12</li>
+						<li>Action date: 04/26/12</li>
+						<li>Action: Other.</li>
+						<li>Note: It's finals season, you know, I need notes.</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div data-role="page" id="action_fan" data-title="Smart Energy | Previous Action">
+				<div data-theme="a" data-role="header">
+					<h4><img class="header-icon" src="static/img/icon.png"/>Smart Energy</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" data-theme="b">
+						<li>Issue: Unplug your fan?</li>
+						<li>Description: Summer is almost gone, it might be a good time to unplug your fan.</li>
+						<li>Issue date: 03/25/12</li>
+						<li>Action date: 03/28/12</li>
+						<li>Action: Unplug fan.</li>
+					</ul>
+				</div>
+			</div>
+				
+			<div data-role="page" id="analysis" data-title="Smart Energy | Analysis">
+				<div data-role="header" class="ui-header ui-bar-a" role="banner">
+					<a href="#" class="showMenu">Menu</a>
+					<h4><img class="header-icon" src="static/img/icon.png"/>Analysis</h4>
+					<div data-role="navbar" data-iconpos="bottom">
+						<ul>
+							<li><a href="#" data-theme="" id="time_nav" data-icon="custom" data-iconshadow="false" class="ui-btn-active">Time</a></li>
+							<li><a href="#" data-theme="" id="device_nav" data-icon="custom" data-iconshadow="false">Device</a></li>
+							<li><a href="#" data-theme="" id="peer_nav" data-icon="custom" data-iconshadow="false">Peer</a></li>
+						</ul>
+						
+						
+					</div>
+				</div>
+				<div data-role="content">
+					<div id="trend_chart" align="middle"></div>
+					<div data-role="controlgroup" data-type="horizontal" align="middle" id="analysis_time_scale">
+						<a href="" data-role="button" class="details_day_button ">Day</a>
+						<a href="" data-role="button" class="details_week_button">Week</a>
+						<a href="" data-role="button" class="details_month_button ui-btn-active">Month</a>
+					</div>
+				</div>
+			</div>
+				
+			<div data-role="page" data-url="appliances" id="appliance" data-title="Smart Energy | Appliance">
+				<div data-role="header" class="ui-header ui-bar-a" role="banner">
+					<a href="#" class="showMenu">Menu</a>
+					<h4><img class="header-icon" src="static/img/icon.png"/>Appliances</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview">
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/microwave.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Microwave</h2>
+								<p style="color:#999">$25/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/fridge.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Fridge</h2>
+								<p style="color:#999">$18/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/tv.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Television</h2>
+								<p style="color:#999">$12.23/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/oven.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Oven</h2>
+								<p style="color:#999">$10/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/washer.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Washer</h2>
+								<p style="color:#999">$6/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/fan.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Fan</h2>
+								<p style="color:#999">$2/month</p>
+							</a>
+						</li>
+						<li>
+							<a href="#appliance_details">
+								<img src="static/img/appliances/printer.png" width="80" height="80" style="position:absolute;"/>
+								<h2>Printer</h2>
+								<p style="color:#999">$1/month</p>
+							</a>
+						</li>
+					<ul>
+				</div>
+			</div>
+			
+			<div data-role="page" data-url="appliances_details" id="appliance_details" data-title="Smart Energy | Appliance Details">
+				<div data-role="header" class="ui-header ui-bar-a" role="banner">
+					<a href='#' class='ui-btn-left ui-btn-back' data-icon='arrow-l'>Back</a>
+					<h4><img class="header-icon" src="static/img/icon.png"/>Appliances</h4>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview">
+						<li data-icon="false">
+							<a>
+								<img src="static/img/appliances/microwave.png" width="80" height="80" style="position:absolute"/>
+								<h2>Microwave</h2>
+								<p style="color:#999">Average: $25/month</br>Current: $23/month</p>
+							</a>
+						</li>
+					</ul>
+					<div id="appliance_details_chart" align="middle"></div>
+					<div data-role="controlgroup" data-type="horizontal" align="middle" id="appliance_details_button">
+						<a href="" data-role="button" class="details_day_button ui-btn-active">Day</a>
+						<a href="" data-role="button" class="details_week_button">Week</a>
+						<a href="" data-role="button" class="details_month_button">Month</a>
+					</div>
+				</div>
+			</div>
+			
+			<div data-role="page" id="account">
+				<div data-role="header" class="ui-header ui-bar-a" role="banner">
+						<a href="#" class="showMenu">Menu</a>
+						<h4><img class="header-icon" src="static/img/icon.png"/>Account</h4>
+				</div>
+
+				<div data-role="content"">	
+					<ul data-role="listview" class="ui-listview">
+						<li>
+							<div class="ui-btn-text">
+								<a data-transition="slide" href="#account-basic" class="ui-link-inherit">
+									<h3 class="ui-li-heading">Basic Information</h3>
+									<p class="ui-li-desc">Change user name, password, or email.</p>
+								</a>
+							</div>
+						</li>
+						
+						<li>
+						  <div class="ui-btn-text">
+								<a data-transition="slide" href="#account-widgets" class="ui-link-inherit">
+									<h3 class="ui-li-heading">Home Page Widgets</h3>
+									<p class="ui-li-desc">Modify what's visible on your home page '</p>
+								</a>
+							</div>
+						</li>
+						
+						<li>
+						  <div class="ui-btn-text">
+								<a data-transition="slide" href="#account-home" class="ui-link-inherit">
+									<h3 class="ui-li-heading">My Home</h3>
+									<p class="ui-li-desc">Edit home information, add or remove appliances or change your Smart Energy device</p>
+								</a>
+							</div>
+						</li>
+						
+						<li>
+						  <div class="ui-btn-text">
+								<a data-transition="slide" href="#account-notifications" class="ui-link-inherit">
+									<h3 class="ui-li-heading">Notification Settings</h3>
+									<p class="ui-li-desc">Fine tune your notifications.</p>
+								</a>
+							</div>
+						</li>
+						
+						<li>
+						  <div class="ui-btn-text">
+								<a data-transition="slide" href="#account-facebook" class="ui-link-inherit">
+									<h3 class="ui-li-heading">Facebook Connect</h3>
+									<p class="ui-li-desc">Compare usage to friends using Facebook.</p>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div><!-- /content -->
+			</div><!-- /page -->
+			
+			<div data-role="page" id="account-basic" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>Basic Information</h1>
+				</div><!-- /header -->
+				<div data-role="content"">
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="name" class="ui-input-text">User Name:</label>
+						<input type="text" name="name" id="name" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="password" class="ui-input-text">Password:</label>
+						<input type="password" name="name" id="password" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="password" class="ui-input-text">New Password:</label>
+						<input type="password" name="name" id="new_password" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+					</div>
+					
+					<a href="#" data-role="button">Change Password</a>
+				</div><!-- /content -->
+			</div><!-- /page -->
+			
+			<div data-role="page" id="account-widgets" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>Widgets</h1>
+				</div><!-- /header -->
+				<div data-role="content"">
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="slider2" id="slider2-label" class="ui-slider">Live Energy Use:</label>
+						<select name="slider2" id="slider2" data-role="slider" class="ui-slider-switch">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+						</select>
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="slider2" id="slider2-label" class="ui-slider">Monthly Budget</label>
+						<select name="slider2" id="slider2" data-role="slider" class="ui-slider-switch">
+							<option value="off">Off</option>
+							<option value="on">On</option>
+						</select>
+					</div>
+					
+				</div><!-- /content -->
+			</div><!-- /page -->
+			
+			<div data-role="page" id="account-home" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>My Home</h1>
+				</div><!-- /header -->
+				<div data-role="content"">	
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="size" class="ui-input-text">Size (in sq. ft.):</label>
+						<input type="text" value="1550" name="size" id="name" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="slider-0">Occupants:</label>
+						<input type="range" name="slider" id="slider-0" value="4" min="1" max="10" />
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="slider-0">Bedrooms:</label>
+						<input type="range" name="slider" id="slider-0" value="3" min="1" max="10" />
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="slider-1">Bathrooms:</label>
+						<input type="range" name="slider-1" id="slider-1" value="2" min="1" max="10" />
+					</div>
+					
+					<div data-role="fieldcontain">
+						<label for="slider-1">Floors:</label>
+						<input type="range" name="slider-2" id="slider-2" value="2" min="1" max="5" />
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="basement" id="slider2-label" class="ui-slider">Basement?</label>
+						<select name="basement" id="basement" data-role="slider" class="ui-slider-switch">
+							<option value="off">No</option>
+							<option value="on">Yes</option>
+						</select>
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="select-choice-0" class="select">Power Company</label>
+						<select name="select-choice-0" id="select-choice-1">
+							 <option value="standard">Duquesne Light</option>
+							 <option value="rush">Energon</option>
+							 <option value="express">Scrooge McDuck</option>
+							 <option value="overnight">Mr. Burns' Reactor</option>
+						</select>
+					</div>
+				</div><!-- /content -->
+			</div><!-- /page -->
+			
+			<div data-role="page" id="account-notifications" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>Notifications</h1>
+				</div><!-- /header -->
+				<div data-role="content">	
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="basement" id="slider2-label" class="ui-slider">Possible Device Breakdowns</label>
+						<select name="basement" id="basement" data-role="slider" class="ui-slider-switch">
+							<option value="off">No</option>
+							<option value="on">Yes</option>
+						</select>
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="basement" id="slider2-label" class="ui-slider">Abnormally High Use</label>
+						<select name="basement" id="basement" data-role="slider" class="ui-slider-switch">
+							<option value="off">No</option>
+							<option value="on">Yes</option>
+						</select>
+					</div>
+					
+					<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<label for="basement" id="slider2-label" class="ui-slider">Devices accidently left on</label>
+						<select name="basement" id="basement" data-role="slider" class="ui-slider-switch">
+							<option value="off">No</option>
+							<option value="on">Yes</option>
+						</select>
+					</div>
+				</div><!-- /content -->
+			</div><!-- /page -->
+			
+			<div data-role="page" id="account-facebook" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>Facebook Connect</h1>
+				</div><!-- /header -->
+				<div data-role="content" style="text-align: center">	
+					<a href="#account-facebook-control"><img src="static/img/facebook.png" /></a>
+				</div><!-- /content -->
+			</div><!-- /page -->
+
+			<div data-role="page" id="account-facebook-control" data-add-back-btn="true">
+				<div data-role="header">
+					<h1>Facebook Connect</h1>
+				</div><!-- /header -->
+				<div data-role="content">
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+							<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+							<label for="checkbox-1">BENEKER, Alan</label>
+							<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+							<label for="checkbox-2">CALHOUN, Jimmy</label>
+							<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+							<label for="checkbox-3">LONDOT, Todd</label>
+							<input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom" />
+							<label for="checkbox-4">SMITH, Dwight</label>
+							<input type="checkbox" name="checkbox-5" id="checkbox-5" class="custom" />
+							<label for="checkbox-5">PAINTER, Seth</label>
+							<input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
+							<label for="checkbox-6">ELLIOTT, Jared</label>
+							<input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
+							<label for="checkbox-7">DECKER, Kyle</label>
+							<input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
+							<label for="checkbox-8">GODSEY, Brandon</label>
+						</fieldset>
+					</div>
+				</div>
+			</div><!-- /page -->
+				
+      <script>
+				// Load the Visualization API and the piechart package.
+				google.load('visualization', '1.0', {'packages':['corechart', 'gauge', 'treemap']});
+				
+				// Set a callback to run when the Google Visualization API is loaded.
+				google.setOnLoadCallback(drawChart);
+
+				// Callback that creates and populates a data table,
+				// instantiates the pie chart, passes in the data and
+				// draws it.
+				function drawChart() {
+					drawTimeChart();
+					tempDrawDetailsChart(1);
+					updateSlider();
+					prepareSlider();
+				}
+				
+				/* Create home page slider. */
+				function prepareSlider(){
+					jQuery(function() {
+						jQuery('#camera_wrap_1').camera({
+							loader: 'bar',
+							pagination: false,
+							hover: false,
+							opacityOnGrid: false,
+							//mobileNavHover: false,
+							//navigationHover: false,
+							height: '60%',
+							portrait: true,
+							slideOn: 'next',
+							fx:'scrollLeft,scrollRight,scrollHorz,scrollBottom,scrollTop'
+						});
+					});
+				}
+				
+				function updateSlider() {
+					var url = tempGetPieChart();
+					//$(".cameraSlide_0 img").attr("src", url);
+					$("#slide_1").attr("data-src", url);
+					var url = getProcessChart();
+					console.log(url);
+					//$("#slide_2").attr("data-src", url);
+					//$(".cameraSlide_1 img").attr("src", url);
+				}
+				
+				$("#time_nav").click(function() {
+					$("#trend_chart").toggle(0, function() {
+						drawTimeChart();
+						$("#trend_chart").toggle(0);
+					});
+				});
+				$("#device_nav").click(function() {
+					$("#trend_chart").toggle(0, function() {
+						drawTreeChart();
+						$("#trend_chart").toggle(0);
+					});
+				});
+				$("#peer_nav").click(function() {
+					$("#trend_chart").toggle(0, function() {
+						drawPeerChart();
+						$("#trend_chart").toggle(0);
+					});
+				});
+				
+				$('[data-role=page]').live('pageshow', function (event) {
+						if ((this.id == "Categories") || (this.id == "")) {
+								$('div[data-role="header"]').attr('data-theme', 'a');
+								$('div[data-role="header"]').attr('class', 'ui-bar-a ui-header');
+								$('.ui-li-count.ui-btn-up-c.ui-btn-corner-all').css('right', '38px');
+								$('.ui-li-count.ui-btn-up-c.ui-btn-corner-all').css('margin-top', '-.9em');
+								$('.ui-icon.ui-icon-arrow-r').css('margin-top', '-9px');
+								$('.ui-li-count.ui-btn-up-c.ui-btn-corner-all').show();
+								$('.ui-icon.ui-icon-arrow-r').show();
+						}
+				});
+				
+				/* Fix thumbnail nested list no back button bug. */
+				$(':jqmData(url^=action)').live('pagebeforecreate', 
+					function(event) {
+						$(this).filter(':jqmData(url*=ui-page)').find(':jqmData(role=header)')
+							.prepend('<a href="#" data-rel="back" data-icon="back">Back</a>')
+					});
+					
+				$('.ui-btn-back').live('tap',function() {
+					history.back(); return false;
+				}).live('click',function() {
+					return false;
+				});
+
+				$(document).bind("mobileinit", function(){
+					$.mobile.page.prototype.options.addBackBtn = true;
+					$.mobile.listview.prototype.options.headerTheme = "a";
+				});
+				
+				
+				$(window).load(function() {
+          $('.flexslider').flexslider({controlNav: false});
+        });
+				
+      </script>
+    </body>
+
+</html>
